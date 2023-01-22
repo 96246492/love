@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        html,
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: #000;
+        }
+
+        /* @charset "utf-8"; */
+
+        html,
+        body {
+            overflow: hidden;
+        }
+
+        .back {
+            /* position: fixed;
+            padding: 0;
+            margin: 0;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgb(252, 235, 236);
+            animation-name: back;
+            animation-duration: 2s;
+            animation-iteration-count: infinite; */
+        }
+
+        :root {
+            --w: 15rem;
+            --h: 15rem;
+
+            --love1-w: 125px;
+
+        }
+
+        .love {
+            position: absolute;
+            background-color: rgb(207, 105, 112);
+            width: var(--w);
+            height: var(--h);
+            margin: auto;
+            top: 0;
+            left: 0;
+            bottom: 0;
+            right: 0;
+            transform: rotate(-45deg);
+            animation-name: love;
+            animation-duration: 3s;
+            animation-delay: 0.1s;
+            animation-iteration-count: infinite;
+            box-shadow: 0 0 100px rgb(207, 105, 112);
+        }
+
+        .love::before {
+            content: "";
+            position: absolute;
+            background-color: rgb(207, 105, 112);
+            border-radius: 50%;
+            width: var(--w);
+            height: var(--h);
+            top: calc((-1 * var(--h)) / 2);
+            left: 0px;
+            box-shadow: 0 0 100px rgb(207, 105, 112);
+        }
+
+        .love::after {
+            box-shadow: 0 0 100px rgb(207, 105, 112);
+
+            content: "";
+            position: absolute;
+            background-color: rgb(207, 105, 112);
+            border-radius: 50%;
+            width: var(--w);
+            height: var(--h);
+            left: calc((var(--w) / 2));
+            top: 0px;
+        }
+
+        @keyframes back {
+            50% {
+                background: rgb(250, 211, 214);
+            }
+        }
+
+        @keyframes love {
+            50% {
+                transform: scale(1.2) rotate(-45deg);
+            }
+        }
+
+        /* ================ */
+        .love-1 {
+            box-shadow: 0 0 100px rgb(207, 105, 112);
+            position: absolute;
+            background-color: rgb(231, 132, 139);
+            width: var(--love1-w);
+            height: var(--love1-w);
+            margin: auto;
+            top: 0;
+            left: 0;
+            bottom: 0;
+            right: 0;
+            transform: rotate(-45deg);
+            animation-name: love-1;
+            animation-duration: 4s;
+            animation-delay: 0s;
+            animation-iteration-count: infinite;
+        }
+
+        .love-1::before {
+            box-shadow: 0 0 100px rgb(207, 105, 112);
+
+            content: "";
+            position: absolute;
+            background-color: rgb(231, 132, 139);
+            border-radius: 50%;
+            width: 125px;
+            height: 125px;
+            top: calc(-100px / 2);
+            left: 0px;
+        }
+
+        .love-1::after {
+            content: "";
+            position: absolute;
+            background-color: rgb(231, 132, 139);
+            border-radius: 50%;
+            width: 125px;
+            height: 125px;
+            left: calc(100px / 2);
+            top: 0px;
+            box-shadow: 0 0 100px rgb(207, 105, 112);
+
+        }
+
+        @keyframes love-1 {
+            50% {
+                transform: scale(1.4) rotate(-45deg);
+            }
+        }
+
+        .love-2 {
+            box-shadow: 0 0 100px rgb(207, 105, 112);
+            position: absolute;
+            background-color: pink;
+            width: 62.5px;
+            height: 62.5px;
+            margin: auto;
+            top: 0;
+            left: 0;
+            bottom: 0;
+            right: 0;
+            transform: rotate(-45deg);
+            animation-name: love-2;
+            animation-duration: 1s;
+            animation-delay: 1s;
+            animation-iteration-count: infinite;
+        }
+
+        .love-2::before {
+            content: "";
+            position: absolute;
+            background-color: pink;
+            border-radius: 50%;
+            width: 62.5px;
+            height: 62.5px;
+            top: -31.25px;
+            left: 0px;
+        }
+
+        .love-2::after {
+            content: "";
+            position: absolute;
+            background-color: pink;
+            border-radius: 50%;
+            width: 62.5px;
+            height: 62.5px;
+            left: 31.25px;
+            top: 0px;
+        }
+
+        @keyframes love-2 {
+            50% {
+                transform: scale(1.2) rotate(-45deg);
+            }
+        }
+
+        #willerce {
+            /* border: 1px solid red; */
+            opacity: 0;
+            transition: 2s;
+        }
+    </style>
+</head>
+
+<body>
+    <audio autoplay="autopaly" loop="loop" id="audios">
+        <source src="https://webfs.ali.kugou.com/202301221616/00b0bf23f360ccf45778fbad3890cc9f/KGTX/CLTX001/f1a964a3446419566be4920f9fe5b96e.mp3" type="audio/mp3" />
+    </audio>
+
+    <div id="willerce">
+        <div>
+            <div class="back"></div>
+            <div class="love"></div>
+            <div class="love-1"></div>
+            <div class="love-2"></div>
+        </div>
+    </div>
+    <canvas class="canvas"></canvas>
+    <script src="./Seffects.js"></script>
+    <script type="module">
+
+        // import { startSakura } from "./fullScreenFlower.js";
+
+    </script>
+    <script>
+        let src = 'https://webfs.ali.kugou.com/202301221616/00b0bf23f360ccf45778fbad3890cc9f/KGTX/CLTX001/f1a964a3446419566be4920f9fe5b96e.mp3';
+        document.getElementById('audios').play();
+        // 将以下代码添加到 js 入口函数内即可
+        // 这里使用了微信自带的 WeixinJSBridgeReady 事件
+        document.addEventListener('WeixinJSBridgeReady', function () {
+            document.getElementById('audios').play()
+        })
+
+    </script>
+</body>
+
+</html>
